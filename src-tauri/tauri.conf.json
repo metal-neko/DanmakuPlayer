@@ -1,0 +1,205 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "弹幕播放器",
+  "mainBinaryName": "danmaku-player",
+  "version": "0.1.0",
+  "identifier": "com.metalneko.danmakuplayer",
+  "build": {
+    "beforeDevCommand": "npm run desktop:prepare",
+    "beforeBuildCommand": "npm run desktop:prepare",
+    "frontendDist": "../desktop-dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "create": false,
+        "title": "弹幕播放器",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 320,
+        "minHeight": 240,
+        "center": true,
+        "backgroundColor": "#050609",
+        "dragDropEnabled": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self' blob: http://127.0.0.1:*; connect-src ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Video",
+    "shortDescription": "支持 XML、ASS 弹幕和精确延迟调整的本地视频播放器",
+    "publisher": "Metal Neko",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": {
+      "media-binaries/": "media/"
+    },
+    "fileAssociations": [
+      {
+        "ext": [
+          "mp4",
+          "m4v"
+        ],
+        "name": "MPEG-4 Video",
+        "mimeType": "video/mp4",
+        "role": "Viewer"
+      },
+      {
+        "ext": [
+          "mkv"
+        ],
+        "name": "Matroska Video",
+        "mimeType": "video/x-matroska",
+        "role": "Viewer"
+      },
+      {
+        "ext": [
+          "webm"
+        ],
+        "name": "WebM Video",
+        "mimeType": "video/webm",
+        "role": "Viewer"
+      },
+      {
+        "ext": [
+          "mov"
+        ],
+        "name": "QuickTime Video",
+        "mimeType": "video/quicktime",
+        "role": "Viewer"
+      },
+      {
+        "ext": [
+          "avi"
+        ],
+        "name": "AVI Video",
+        "mimeType": "video/x-msvideo",
+        "role": "Viewer"
+      },
+      {
+        "ext": [
+          "flv"
+        ],
+        "name": "Flash Video",
+        "mimeType": "video/x-flv",
+        "role": "Viewer"
+      },
+      {
+        "ext": [
+          "ts"
+        ],
+        "name": "MPEG Transport Stream",
+        "mimeType": "video/mp2t",
+        "role": "Viewer"
+      },
+      {
+        "ext": [
+          "mpeg",
+          "mpg"
+        ],
+        "name": "MPEG Video",
+        "mimeType": "video/mpeg",
+        "role": "Viewer"
+      },
+      {
+        "ext": [
+          "mts",
+          "m2ts"
+        ],
+        "name": "MPEG Transport Stream",
+        "mimeType": "video/mp2t",
+        "role": "Viewer"
+      },
+      {
+        "ext": [
+          "wmv",
+          "asf"
+        ],
+        "name": "Windows Media Video",
+        "mimeType": "video/x-ms-wmv",
+        "role": "Viewer"
+      },
+      {
+        "ext": [
+          "ogv",
+          "ogg"
+        ],
+        "name": "Ogg Video",
+        "mimeType": "video/ogg",
+        "role": "Viewer"
+      },
+      {
+        "ext": [
+          "3gp",
+          "3g2"
+        ],
+        "name": "3GPP Video",
+        "mimeType": "video/3gpp",
+        "role": "Viewer"
+      },
+      {
+        "ext": [
+          "rm",
+          "rmvb"
+        ],
+        "name": "RealMedia Video",
+        "mimeType": "application/vnd.rn-realmedia",
+        "role": "Viewer"
+      },
+      {
+        "ext": [
+          "vob",
+          "m2v"
+        ],
+        "name": "MPEG Video",
+        "mimeType": "video/mpeg",
+        "role": "Viewer"
+      },
+      {
+        "ext": [
+          "f4v"
+        ],
+        "name": "Flash MP4 Video",
+        "mimeType": "video/mp4",
+        "role": "Viewer"
+      },
+      {
+        "ext": [
+          "divx"
+        ],
+        "name": "DivX Video",
+        "mimeType": "video/x-msvideo",
+        "role": "Viewer"
+      }
+    ],
+    "linux": {
+      "appimage": {
+        "bundleMediaFramework": true
+      },
+      "deb": {
+        "desktopTemplate": "linux.desktop"
+      }
+    },
+    "windows": {
+      "nsis": {
+        "displayLanguageSelector": false,
+        "languages": [
+          "SimpChinese"
+        ]
+      }
+    },
+    "macOS": {
+      "minimumSystemVersion": "12.0"
+    }
+  }
+}

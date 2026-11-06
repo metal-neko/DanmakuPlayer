@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name={{name}}
+Comment={{comment}}
+Exec={{exec}} %f
+Icon={{icon}}
+Terminal=false
+Categories={{categories}}
+StartupWMClass=danmaku-player
+MimeType=video/mp4;video/x-matroska;video/webm;video/quicktime;video/x-msvideo;video/x-flv;video/mp2t;video/mpeg;video/x-ms-wmv;video/x-ms-asf;video/ogg;video/3gpp;video/3gpp2;application/vnd.rn-realmedia;application/vnd.rn-realmedia-vbr;
